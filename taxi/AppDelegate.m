@@ -5,14 +5,38 @@
 //  Created by Ayi on 2014/4/1.
 //  Copyright (c) 2014年 Miiitech. All rights reserved.
 //
+#if !defined(__has_feature) || !__has_feature(objc_arc)
+#error "This file requires ARC support."
+#endif
 
 #import "AppDelegate.h"
+#import "SDKDemoAPIKey.h"
 
-@implementation AppDelegate
+
+@implementation AppDelegate{
+    id services_;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    //設定GoogleMap的API key
+    if ([kAPIKey length] == 0) {
+        // Blow up if APIKey has not yet been set.
+        NSString *bundleId = [[NSBundle mainBundle] bundleIdentifier];
+        NSString *format = @"Configure APIKey inside SDKDemoAPIKey.h for your "
+        @"bundle `%@`, see README.GoogleMapsSDKDemos for more information";
+        @throw [NSException exceptionWithName:@"SDKDemoAppDelegate"
+                                       reason:[NSString stringWithFormat:format, bundleId]
+                                     userInfo:nil];
+    }
+    [GMSServices provideAPIKey:kAPIKey];
+    services_ = [GMSServices sharedServices];
+    
+    // Log the required open source licenses!  Yes, just NSLog-ing them is not
+    // enough but is good for a demo.
+    NSLog(@"Open source licenses:\n%@", [GMSServices openSourceLicenseInfo]);
     
     return YES;
 }
