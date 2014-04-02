@@ -35,12 +35,11 @@
         NSLog(@"Cannot set placeholder text's color, because deployment target is earlier than iOS 6.0");
         // TODO: Add fall-back code to set placeholder color.
     }
-    
-    [self.logInView setLogo:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo.png"]]];
+    self.logInView.logo = nil;
 }
 
 - (void)viewDidLayoutSubviews {
-    [self.logInView.logo setFrame:CGRectMake(-27.0f, 134.0f, 374.0f, 117.0f)];
+    
 }
 
 - (void)didReceiveMemoryWarning

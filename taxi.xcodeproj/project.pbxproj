@@ -21,6 +21,8 @@
 		233A914E18EBD9A2003F371B /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 233A914A18EBD9A2003F371B /* Utils.m */; };
 		233A915518EBDF1E003F371B /* UIImage+AlphaAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 233A915118EBDF1E003F371B /* UIImage+AlphaAdditions.m */; };
 		233A915618EBDF1E003F371B /* UIImage+ResizeAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 233A915318EBDF1E003F371B /* UIImage+ResizeAdditions.m */; };
+		233A915918EBE8D4003F371B /* SignUpFieldBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 233A915718EBE8D4003F371B /* SignUpFieldBG@2x.png */; };
+		233A915A18EBE8D4003F371B /* SignUpFieldBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 233A915818EBE8D4003F371B /* SignUpFieldBG.png */; };
 		238EDC5018EA94D000F054A6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 238EDC4F18EA94D000F054A6 /* Foundation.framework */; };
 		238EDC5218EA94D000F054A6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 238EDC5118EA94D000F054A6 /* CoreGraphics.framework */; };
 		238EDC5418EA94D000F054A6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 238EDC5318EA94D000F054A6 /* UIKit.framework */; };
@@ -94,6 +96,8 @@
 		233A915218EBDF1E003F371B /* UIImage+ResizeAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ResizeAdditions.h"; sourceTree = "<group>"; };
 		233A915318EBDF1E003F371B /* UIImage+ResizeAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ResizeAdditions.m"; sourceTree = "<group>"; };
 		233A915418EBDF1E003F371B /* UIImage+RoundedCornerAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RoundedCornerAdditions.h"; sourceTree = "<group>"; };
+		233A915718EBE8D4003F371B /* SignUpFieldBG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SignUpFieldBG@2x.png"; sourceTree = "<group>"; };
+		233A915818EBE8D4003F371B /* SignUpFieldBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SignUpFieldBG.png; sourceTree = "<group>"; };
 		238EDC4C18EA94D000F054A6 /* taxi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = taxi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		238EDC4F18EA94D000F054A6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		238EDC5118EA94D000F054A6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -178,14 +182,13 @@
 		233A912418EBA024003F371B /* 0.註冊及登入流程 */ = {
 			isa = PBXGroup;
 			children = (
-				233A913618EBA1CD003F371B /* 0.2連接付款 */,
-				233A912F18EBA106003F371B /* 0.1建立資本資料 */,
 				233A912918EBA0CA003F371B /* AyiWellcomeViewController.h */,
 				233A912A18EBA0CA003F371B /* AyiWellcomeViewController.m */,
 				233A912618EBA09B003F371B /* AyiLoginViewController.h */,
 				233A912718EBA09B003F371B /* AyiLoginViewController.m */,
-				233A912C18EBA0F5003F371B /* AyiSignUpViewController.h */,
-				233A912D18EBA0F5003F371B /* AyiSignUpViewController.m */,
+				233A915B18EBF157003F371B /* 0.0註冊 */,
+				233A912F18EBA106003F371B /* 0.1建立資本資料 */,
+				233A913618EBA1CD003F371B /* 0.2連接付款 */,
 			);
 			name = "0.註冊及登入流程";
 			sourceTree = "<group>";
@@ -220,6 +223,8 @@
 		233A913F18EBD710003F371B /* image */ = {
 			isa = PBXGroup;
 			children = (
+				233A915718EBE8D4003F371B /* SignUpFieldBG@2x.png */,
+				233A915818EBE8D4003F371B /* SignUpFieldBG.png */,
 				233A914018EBD80D003F371B /* Logo@2x.png */,
 				233A913C18EBD70E003F371B /* Logo.png */,
 			);
@@ -251,6 +256,15 @@
 				233A915418EBDF1E003F371B /* UIImage+RoundedCornerAdditions.h */,
 			);
 			name = Library;
+			sourceTree = "<group>";
+		};
+		233A915B18EBF157003F371B /* 0.0註冊 */ = {
+			isa = PBXGroup;
+			children = (
+				233A912C18EBA0F5003F371B /* AyiSignUpViewController.h */,
+				233A912D18EBA0F5003F371B /* AyiSignUpViewController.m */,
+			);
+			name = "0.0註冊";
 			sourceTree = "<group>";
 		};
 		238EDC4318EA94D000F054A6 = {
@@ -441,7 +455,9 @@
 				233A913E18EBD70E003F371B /* Logo.png in Resources */,
 				238EDC5A18EA94D000F054A6 /* InfoPlist.strings in Resources */,
 				238EDC6318EA94D000F054A6 /* Main.storyboard in Resources */,
+				233A915918EBE8D4003F371B /* SignUpFieldBG@2x.png in Resources */,
 				238EDC8C18EAB3D700F054A6 /* GoogleMaps.bundle in Resources */,
+				233A915A18EBE8D4003F371B /* SignUpFieldBG.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

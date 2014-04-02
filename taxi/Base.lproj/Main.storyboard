@@ -81,7 +81,7 @@
         <!--Set Profile View Controller-->
         <scene sceneID="x8l-xR-nyb">
             <objects>
-                <viewController id="KFl-Id-B5d" customClass="SetProfileViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="setProfile" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KFl-Id-B5d" customClass="SetProfileViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2Ka-7N-cic"/>
                         <viewControllerLayoutGuide type="bottom" id="dIo-jw-XPd"/>
@@ -89,16 +89,44 @@
                     <view key="view" contentMode="scaleToFill" id="QmA-te-ViO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="名字" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q5f-QL-YrT">
+                                <rect key="frame" x="115" y="97" width="185" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="姓氏" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zUO-5e-lMh">
+                                <rect key="frame" x="115" y="135" width="185" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n1G-IU-aQE">
+                                <rect key="frame" x="20" y="85" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ddn-u4-XHR">
+                                <rect key="frame" x="20" y="85" width="80" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="編輯">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="KhQ-QA-4fM"/>
+                    <navigationItem key="navigationItem" id="KhQ-QA-4fM">
+                        <barButtonItem key="leftBarButtonItem" title="取消" id="lMT-gR-Bby"/>
+                    </navigationItem>
                     <connections>
                         <segue destination="2gx-F3-dWG" kind="push" identifier="connectCreditCard" id="pKX-G2-tly"/>
+                        <segue destination="fEG-UE-bPx" kind="modal" identifier="setToMap" modalTransitionStyle="crossDissolve" id="ose-ng-mQR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vwb-nP-JX3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1691" y="-235"/>
+            <point key="canvasLocation" x="1807" y="-232"/>
         </scene>
         <!--Connect Credit Card View Controller-->
         <scene sceneID="YJb-3d-s3A">
@@ -114,15 +142,18 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="bVw-da-bZL"/>
+                    <connections>
+                        <segue destination="fEG-UE-bPx" kind="modal" identifier="connectToMap" modalTransitionStyle="crossDissolve" id="ghv-Lr-rwU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ot7-fA-eys" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2130" y="-232"/>
+            <point key="canvasLocation" x="2342" y="-482"/>
         </scene>
         <!--Google Map View Controller-->
         <scene sceneID="fNU-Tm-LiN">
             <objects>
-                <viewController storyboardIdentifier="googlemap" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6sW-M4-2xL" customClass="GoogleMapViewController" sceneMemberID="viewController">
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="6sW-M4-2xL" customClass="GoogleMapViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="McN-aY-I6d"/>
                         <viewControllerLayoutGuide type="bottom" id="8Hv-Fz-toz"/>
@@ -132,10 +163,11 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="RzQ-6I-gXk"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jRd-wY-3V0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2130" y="462"/>
+            <point key="canvasLocation" x="3412" y="462"/>
         </scene>
         <!--Ayi Login View Controller-->
         <scene sceneID="GqA-qN-IF3">
@@ -157,6 +189,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="KFl-Id-B5d" kind="push" identifier="loginToSet" id="B3y-a1-CVN"/>
+                        <segue destination="fEG-UE-bPx" kind="modal" identifier="loginToMap" modalTransitionStyle="crossDissolve" id="cbe-o7-XHN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MxO-we-81e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -198,10 +234,32 @@
             </objects>
             <point key="canvasLocation" x="736" y="462"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="L3K-lr-FUx">
+            <objects>
+                <navigationController storyboardIdentifier="googlemap" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fEG-UE-bPx" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="xwP-Pa-K8x">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="6sW-M4-2xL" kind="relationship" relationship="rootViewController" id="N9H-dR-NCV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2lH-eE-MTz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2886" y="462"/>
+        </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="B3y-a1-CVN"/>
+        <segue reference="ose-ng-mQR"/>
+    </inferredMetricsTieBreakers>
 </document>

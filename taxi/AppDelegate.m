@@ -13,6 +13,7 @@
 #import "SDKDemoAPIKey.h"
 #import "GoogleMapViewController.h"
 #import "AyiWellcomeViewController.h"
+#import "SetProfileViewController.h"
 
 static AppDelegate *sharedDelegate;
 
@@ -86,8 +87,8 @@ static AppDelegate *sharedDelegate;
     }else{
         self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
         UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
-        self.mainMap = [mainStoryboard instantiateViewControllerWithIdentifier:@"googlemap"];
-        self.window.rootViewController = self.mainMap;
+        UINavigationController *mapView = (UINavigationController *)[mainStoryboard instantiateViewControllerWithIdentifier:@"googlemap"];
+        self.window.rootViewController = mapView;
         [self.window makeKeyAndVisible];
     }
     
@@ -221,6 +222,15 @@ static AppDelegate *sharedDelegate;
     // 當應用程序即將終止調用。如果適當的保存數據。另請參閱applicationDidEnterBackground：
 }
 
++ (NSInteger)OSVersion
+{
+    static NSUInteger _deviceSystemMajorVersion = -1;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _deviceSystemMajorVersion = [[[[[UIDevice currentDevice] systemVersion] componentsSeparatedByString:@"."] objectAtIndex:0] intValue];
+    });
+    return _deviceSystemMajorVersion;
+}
 
 + (AppDelegate *)sharedDelegate {
     if (!sharedDelegate) {
@@ -272,6 +282,32 @@ static AppDelegate *sharedDelegate;
 - (BOOL)isParseReachable {
     return self.networkStatus != NotReachable;
 }
+#pragma mark - presentWelcomeViewControllerAnimated
+- (void)presentWelcomeViewControllerAnimated:(BOOL)animated {
+    UIStoryboard *storybord = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    AyiWellcomeViewController *welcomeVC = (AyiWellcomeViewController *)[storybord instantiateViewControllerWithIdentifier:@"welcome"];
+    self.window.rootViewController = welcomeVC;
+}
+#pragma mark - presentWelcomeViewController
+- (void)presentWelcomeViewController {
+    [self presentWelcomeViewControllerAnimated:YES];
+}
+
+#pragma mark - 第一次登入轉場至會員第一次設定頁
+- (void)presentFirstSignInViewController{
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+    SetProfileViewController *firstSign = (SetProfileViewController *)[mainStoryboard instantiateViewControllerWithIdentifier:@"setProfile"];
+    firstSign.navigationItem.leftBarButtonItem = nil;
+    self.window.rootViewController = firstSign;
+    [self.window makeKeyAndVisible];
+}
+#pragma mark - 轉場至Google Map
+- (void)presentGoogleMapController {
+    UIStoryboard *storybord = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    UINavigationController *googleMap = (UINavigationController *)[storybord instantiateViewControllerWithIdentifier:@"googlemap"];
+    self.window.rootViewController = googleMap;
+    [self.window makeKeyAndVisible];
+}
 
 #pragma mark - 登出
 - (void)logOut{
@@ -303,13 +339,16 @@ static AppDelegate *sharedDelegate;
     [self presentWelcomeViewController];
 }
 
-- (void)presentWelcomeViewControllerAnimated:(BOOL)animated {
-    UIStoryboard *storybord = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-    AyiWellcomeViewController *welcomeVC = (AyiWellcomeViewController *)[storybord instantiateViewControllerWithIdentifier:@"welcome"];
-    self.window.rootViewController = welcomeVC;
-}
-
-- (void)presentWelcomeViewController {
-    [self presentWelcomeViewControllerAnimated:YES];
+- (BOOL)handleActionURL:(NSURL *)url {
+    if ([[url host] isEqualToString:kPAPLaunchURLHostTakePicture]) {
+        if ([PFUser currentUser]) {
+            //偵測到拍照動作，就轉場至Ask畫面的拍照按鈕
+            /*
+             這裡原先的拍照按鈕剛好等於tabBar的中間鈕，所以現在就暫時取消。
+             return [self.tabBarController shouldPresentPhotoCaptureController];
+             */
+        }
+    }
+    return NO;
 }
 @end

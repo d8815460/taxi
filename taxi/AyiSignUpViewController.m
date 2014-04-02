@@ -9,10 +9,11 @@
 #import "AyiSignUpViewController.h"
 
 @interface AyiSignUpViewController ()
-
+@property (nonatomic, strong) UIImageView *fieldsBackground;
 @end
 
 @implementation AyiSignUpViewController
+@synthesize fieldsBackground;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,15 +32,20 @@
     // Change the placeholder text "Additional" to "Phone number"
     if ([self.signUpView.additionalField respondsToSelector:@selector(setAttributedPlaceholder:)] && [self.signUpView.usernameField respondsToSelector:@selector(setAttributedPlaceholder:)]) {
         UIColor *color = [UIColor colorWithRed:169.0f/255.0f green:169.0f/255.0f blue:169.0f/255.0f alpha:1.0];
-        self.signUpView.additionalField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Phone number" attributes:@{NSForegroundColorAttributeName: color}];
+        self.signUpView.additionalField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Phone Number" attributes:@{NSForegroundColorAttributeName: color}];
         self.signUpView.usernameField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Account" attributes:@{NSForegroundColorAttributeName: color}];
     }else {
         NSLog(@"Cannot set placeholder text's color, because deployment target is earlier than iOS 6.0");
         // TODO: Add fall-back code to set placeholder color.
     }
     
+    self.signUpView.usernameField.autocapitalizationType = UITextAutocapitalizationTypeNone;
+    
+    [self.signUpView.additionalField setKeyboardType:UIKeyboardTypeNumberPad];
+    
+    
     [self.signUpView.signUpButton addTarget:self action:@selector(signupButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
-    [self.signUpView setLogo:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"logo.png"]]];
+    self.signUpView.logo = nil;
 }
 
 - (void)viewDidLayoutSubviews {
@@ -53,7 +59,7 @@
     [self.signUpView.dismissButton setFrame:CGRectMake(10.0f, 10.0f, 87.5f, 45.5f)];
     [self.signUpView.logo setFrame:CGRectMake(-27.0f, 70.0f, 374.0f, 117.0f)];
     [self.signUpView.signUpButton setFrame:CGRectMake(35.0f, 385.0f, 250.0f, 40.0f)];
-//    [self.fieldsBackground setFrame:CGRectMake(35.0f, fieldFrame.origin.y + yOffset, 250.0f, 174.0f)];
+    [self.fieldsBackground setFrame:CGRectMake(35.0f, fieldFrame.origin.y + yOffset, 250.0f, 174.0f)];
     
     [self.signUpView.usernameField setFrame:CGRectMake(fieldFrame.origin.x + 5.0f,
                                                        fieldFrame.origin.y + yOffset,
@@ -103,8 +109,7 @@
 }
 
 - (IBAction)signupButtonPressed:(id)sender{
-    //註冊成功了才前往下一步。
-    [self performSegueWithIdentifier:@"setProfile" sender:sender];
+    
 }
 
 
