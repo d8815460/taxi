@@ -56,6 +56,7 @@
 		238EDCB218EAB68400F054A6 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 238EDCB118EAB68400F054A6 /* GoogleMaps.framework */; };
 		238EDCB318EAB68400F054A6 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 238EDCB118EAB68400F054A6 /* GoogleMaps.framework */; };
 		BF3F8D0A74D54B1C8E63D9F1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CD04588AB7DF4A0B8E070142 /* libPods.a */; };
+		FAF15E8718EC3E3200302259 /* UIImage+RoundedCornerAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF15E8618EC3E3200302259 /* UIImage+RoundedCornerAdditions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +137,7 @@
 		238EDCB118EAB68400F054A6 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
 		BB01B447D69F4701BD60ADF6 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		CD04588AB7DF4A0B8E070142 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAF15E8618EC3E3200302259 /* UIImage+RoundedCornerAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RoundedCornerAdditions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,6 +256,7 @@
 				233A915218EBDF1E003F371B /* UIImage+ResizeAdditions.h */,
 				233A915318EBDF1E003F371B /* UIImage+ResizeAdditions.m */,
 				233A915418EBDF1E003F371B /* UIImage+RoundedCornerAdditions.h */,
+				FAF15E8618EC3E3200302259 /* UIImage+RoundedCornerAdditions.m */,
 			);
 			name = Library;
 			sourceTree = "<group>";
@@ -510,6 +513,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAF15E8718EC3E3200302259 /* UIImage+RoundedCornerAdditions.m in Sources */,
 				233A912E18EBA0F5003F371B /* AyiSignUpViewController.m in Sources */,
 				238EDC6618EA94D000F054A6 /* ViewController.m in Sources */,
 				233A913218EBA12E003F371B /* SetProfileViewController.m in Sources */,
