@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5023" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
+        <deployment defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
+        <!--Ayi Wellcome View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="welcome" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vXZ-lx-hvc" customClass="AyiWellcomeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,11 +16,187 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xbS-Uj-Udg">
+                                <rect key="frame" x="20" y="81" width="109" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <state key="normal" title="登入">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="cCu-LY-d6V"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ord-ri-o5j">
+                                <rect key="frame" x="137" y="81" width="163" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <state key="normal" title="註冊">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="signupButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="HLS-QO-B8X"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <segue destination="brT-9S-AcQ" kind="modal" identifier="signup" modalTransitionStyle="crossDissolve" id="tmr-hO-toq"/>
+                        <segue destination="1VE-g0-EYb" kind="modal" identifier="login" modalTransitionStyle="crossDissolve" id="OHc-ZE-6ee"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Ayi Sign Up View Controller-->
+        <scene sceneID="9kw-jN-Quw">
+            <objects>
+                <viewController storyboardIdentifier="signup" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0kK-tG-rXf" customClass="AyiSignUpViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Lkt-g4-CZe"/>
+                        <viewControllerLayoutGuide type="bottom" id="mh0-mj-WZf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="r7e-AW-PRd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="QEc-Eb-jY7">
+                        <barButtonItem key="leftBarButtonItem" title="取消" id="dNF-zX-Vsn">
+                            <connections>
+                                <action selector="cancelButtonPressed:" destination="0kK-tG-rXf" id="JBn-ej-bty"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="KFl-Id-B5d" kind="push" identifier="setProfile" id="8TO-zH-akg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tXL-Gw-wbd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1262" y="-232"/>
+        </scene>
+        <!--Set Profile View Controller-->
+        <scene sceneID="x8l-xR-nyb">
+            <objects>
+                <viewController id="KFl-Id-B5d" customClass="SetProfileViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2Ka-7N-cic"/>
+                        <viewControllerLayoutGuide type="bottom" id="dIo-jw-XPd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="QmA-te-ViO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="KhQ-QA-4fM"/>
+                    <connections>
+                        <segue destination="2gx-F3-dWG" kind="push" identifier="connectCreditCard" id="pKX-G2-tly"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vwb-nP-JX3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1691" y="-235"/>
+        </scene>
+        <!--Connect Credit Card View Controller-->
+        <scene sceneID="YJb-3d-s3A">
+            <objects>
+                <viewController id="2gx-F3-dWG" customClass="ConnectCreditCardViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vVx-hO-8Gf"/>
+                        <viewControllerLayoutGuide type="bottom" id="LLU-Fj-sxK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tLx-7t-TgY">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="bVw-da-bZL"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ot7-fA-eys" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2130" y="-232"/>
+        </scene>
+        <!--Google Map View Controller-->
+        <scene sceneID="fNU-Tm-LiN">
+            <objects>
+                <viewController storyboardIdentifier="googlemap" useStoryboardIdentifierAsRestorationIdentifier="YES" id="6sW-M4-2xL" customClass="GoogleMapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="McN-aY-I6d"/>
+                        <viewControllerLayoutGuide type="bottom" id="8Hv-Fz-toz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mxg-iU-xSP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jRd-wY-3V0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2130" y="462"/>
+        </scene>
+        <!--Ayi Login View Controller-->
+        <scene sceneID="GqA-qN-IF3">
+            <objects>
+                <viewController storyboardIdentifier="login" useStoryboardIdentifierAsRestorationIdentifier="YES" id="FQ9-mZ-5qV" customClass="AyiLoginViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="O4d-1M-h38"/>
+                        <viewControllerLayoutGuide type="bottom" id="hU5-Dg-Uyi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tus-4b-MsV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Bmq-FP-Vsg">
+                        <barButtonItem key="leftBarButtonItem" title="取消" id="Ydx-44-UFW">
+                            <connections>
+                                <action selector="backButtonPressed:" destination="FQ9-mZ-5qV" id="QYe-UK-3al"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MxO-we-81e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1262" y="462"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="6Do-DM-WHR">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="brT-9S-AcQ" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aZ7-Ry-uEQ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="0kK-tG-rXf" kind="relationship" relationship="rootViewController" id="q4Y-DW-67j"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9rG-tl-Cx4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="736" y="-232"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="oi9-ia-5vH">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1VE-g0-EYb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Qja-Hl-sez">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="FQ9-mZ-5qV" kind="relationship" relationship="rootViewController" id="MLa-1F-3Fs"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hpm-et-k7n" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="736" y="462"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

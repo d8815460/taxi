@@ -7,9 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GoogleMapViewController.h"
+#import <Reachability.h>                    //判斷網路是否可用
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic) GoogleMapViewController *mainMap;
+@property (nonatomic, strong) Reachability *hostReach;                                  //判斷網路是否可用
+@property (nonatomic, strong) Reachability *internetReach;                              //判斷網路是否可用
+@property (nonatomic, strong) Reachability *wifiReach;                                  //判斷wifi網路是否可用
+@property (nonatomic, readonly) int networkStatus;
+
 
 @end

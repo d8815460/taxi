@@ -7,6 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		233A912818EBA09B003F371B /* AyiLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 233A912718EBA09B003F371B /* AyiLoginViewController.m */; };
+		233A912B18EBA0CA003F371B /* AyiWellcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 233A912A18EBA0CA003F371B /* AyiWellcomeViewController.m */; };
+		233A912E18EBA0F5003F371B /* AyiSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 233A912D18EBA0F5003F371B /* AyiSignUpViewController.m */; };
+		233A913218EBA12E003F371B /* SetProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 233A913118EBA12E003F371B /* SetProfileViewController.m */; };
+		233A913518EBA1C8003F371B /* ConnectCreditCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 233A913418EBA1C8003F371B /* ConnectCreditCardViewController.m */; };
+		233A913A18EBBF41003F371B /* GoogleMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 233A913918EBBF41003F371B /* GoogleMapViewController.m */; };
+		233A913E18EBD70E003F371B /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 233A913C18EBD70E003F371B /* Logo.png */; };
+		233A914118EBD80D003F371B /* Logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 233A914018EBD80D003F371B /* Logo@2x.png */; };
+		233A914B18EBD9A2003F371B /* CMCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 233A914418EBD9A2003F371B /* CMCache.m */; };
+		233A914C18EBD9A2003F371B /* CMConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 233A914618EBD9A2003F371B /* CMConstants.m */; };
+		233A914D18EBD9A2003F371B /* CMUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 233A914818EBD9A2003F371B /* CMUtility.m */; };
+		233A914E18EBD9A2003F371B /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 233A914A18EBD9A2003F371B /* Utils.m */; };
+		233A915518EBDF1E003F371B /* UIImage+AlphaAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 233A915118EBDF1E003F371B /* UIImage+AlphaAdditions.m */; };
+		233A915618EBDF1E003F371B /* UIImage+ResizeAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 233A915318EBDF1E003F371B /* UIImage+ResizeAdditions.m */; };
 		238EDC5018EA94D000F054A6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 238EDC4F18EA94D000F054A6 /* Foundation.framework */; };
 		238EDC5218EA94D000F054A6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 238EDC5118EA94D000F054A6 /* CoreGraphics.framework */; };
 		238EDC5418EA94D000F054A6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 238EDC5318EA94D000F054A6 /* UIKit.framework */; };
@@ -53,6 +67,33 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		233A912618EBA09B003F371B /* AyiLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AyiLoginViewController.h; sourceTree = "<group>"; };
+		233A912718EBA09B003F371B /* AyiLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AyiLoginViewController.m; sourceTree = "<group>"; };
+		233A912918EBA0CA003F371B /* AyiWellcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AyiWellcomeViewController.h; sourceTree = "<group>"; };
+		233A912A18EBA0CA003F371B /* AyiWellcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AyiWellcomeViewController.m; sourceTree = "<group>"; };
+		233A912C18EBA0F5003F371B /* AyiSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AyiSignUpViewController.h; sourceTree = "<group>"; };
+		233A912D18EBA0F5003F371B /* AyiSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AyiSignUpViewController.m; sourceTree = "<group>"; };
+		233A913018EBA12E003F371B /* SetProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetProfileViewController.h; sourceTree = "<group>"; };
+		233A913118EBA12E003F371B /* SetProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetProfileViewController.m; sourceTree = "<group>"; };
+		233A913318EBA1C8003F371B /* ConnectCreditCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectCreditCardViewController.h; sourceTree = "<group>"; };
+		233A913418EBA1C8003F371B /* ConnectCreditCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectCreditCardViewController.m; sourceTree = "<group>"; };
+		233A913818EBBF41003F371B /* GoogleMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleMapViewController.h; sourceTree = "<group>"; };
+		233A913918EBBF41003F371B /* GoogleMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoogleMapViewController.m; sourceTree = "<group>"; };
+		233A913C18EBD70E003F371B /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
+		233A914018EBD80D003F371B /* Logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Logo@2x.png"; sourceTree = "<group>"; };
+		233A914318EBD9A2003F371B /* CMCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMCache.h; sourceTree = "<group>"; };
+		233A914418EBD9A2003F371B /* CMCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMCache.m; sourceTree = "<group>"; };
+		233A914518EBD9A2003F371B /* CMConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMConstants.h; sourceTree = "<group>"; };
+		233A914618EBD9A2003F371B /* CMConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMConstants.m; sourceTree = "<group>"; };
+		233A914718EBD9A2003F371B /* CMUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMUtility.h; sourceTree = "<group>"; };
+		233A914818EBD9A2003F371B /* CMUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMUtility.m; sourceTree = "<group>"; };
+		233A914918EBD9A2003F371B /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		233A914A18EBD9A2003F371B /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		233A915018EBDF1E003F371B /* UIImage+AlphaAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+AlphaAdditions.h"; sourceTree = "<group>"; };
+		233A915118EBDF1E003F371B /* UIImage+AlphaAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+AlphaAdditions.m"; sourceTree = "<group>"; };
+		233A915218EBDF1E003F371B /* UIImage+ResizeAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ResizeAdditions.h"; sourceTree = "<group>"; };
+		233A915318EBDF1E003F371B /* UIImage+ResizeAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ResizeAdditions.m"; sourceTree = "<group>"; };
+		233A915418EBDF1E003F371B /* UIImage+RoundedCornerAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RoundedCornerAdditions.h"; sourceTree = "<group>"; };
 		238EDC4C18EA94D000F054A6 /* taxi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = taxi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		238EDC4F18EA94D000F054A6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		238EDC5118EA94D000F054A6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -134,6 +175,84 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		233A912418EBA024003F371B /* 0.註冊及登入流程 */ = {
+			isa = PBXGroup;
+			children = (
+				233A913618EBA1CD003F371B /* 0.2連接付款 */,
+				233A912F18EBA106003F371B /* 0.1建立資本資料 */,
+				233A912918EBA0CA003F371B /* AyiWellcomeViewController.h */,
+				233A912A18EBA0CA003F371B /* AyiWellcomeViewController.m */,
+				233A912618EBA09B003F371B /* AyiLoginViewController.h */,
+				233A912718EBA09B003F371B /* AyiLoginViewController.m */,
+				233A912C18EBA0F5003F371B /* AyiSignUpViewController.h */,
+				233A912D18EBA0F5003F371B /* AyiSignUpViewController.m */,
+			);
+			name = "0.註冊及登入流程";
+			sourceTree = "<group>";
+		};
+		233A912F18EBA106003F371B /* 0.1建立資本資料 */ = {
+			isa = PBXGroup;
+			children = (
+				233A913018EBA12E003F371B /* SetProfileViewController.h */,
+				233A913118EBA12E003F371B /* SetProfileViewController.m */,
+			);
+			name = "0.1建立資本資料";
+			sourceTree = "<group>";
+		};
+		233A913618EBA1CD003F371B /* 0.2連接付款 */ = {
+			isa = PBXGroup;
+			children = (
+				233A913318EBA1C8003F371B /* ConnectCreditCardViewController.h */,
+				233A913418EBA1C8003F371B /* ConnectCreditCardViewController.m */,
+			);
+			name = "0.2連接付款";
+			sourceTree = "<group>";
+		};
+		233A913718EBBF2B003F371B /* 1.地圖首頁 */ = {
+			isa = PBXGroup;
+			children = (
+				233A913818EBBF41003F371B /* GoogleMapViewController.h */,
+				233A913918EBBF41003F371B /* GoogleMapViewController.m */,
+			);
+			name = "1.地圖首頁";
+			sourceTree = "<group>";
+		};
+		233A913F18EBD710003F371B /* image */ = {
+			isa = PBXGroup;
+			children = (
+				233A914018EBD80D003F371B /* Logo@2x.png */,
+				233A913C18EBD70E003F371B /* Logo.png */,
+			);
+			name = image;
+			sourceTree = "<group>";
+		};
+		233A914218EBD94F003F371B /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				233A914318EBD9A2003F371B /* CMCache.h */,
+				233A914418EBD9A2003F371B /* CMCache.m */,
+				233A914518EBD9A2003F371B /* CMConstants.h */,
+				233A914618EBD9A2003F371B /* CMConstants.m */,
+				233A914718EBD9A2003F371B /* CMUtility.h */,
+				233A914818EBD9A2003F371B /* CMUtility.m */,
+				233A914918EBD9A2003F371B /* Utils.h */,
+				233A914A18EBD9A2003F371B /* Utils.m */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		233A914F18EBDF15003F371B /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				233A915018EBDF1E003F371B /* UIImage+AlphaAdditions.h */,
+				233A915118EBDF1E003F371B /* UIImage+AlphaAdditions.m */,
+				233A915218EBDF1E003F371B /* UIImage+ResizeAdditions.h */,
+				233A915318EBDF1E003F371B /* UIImage+ResizeAdditions.m */,
+				233A915418EBDF1E003F371B /* UIImage+RoundedCornerAdditions.h */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
 		238EDC4318EA94D000F054A6 = {
 			isa = PBXGroup;
 			children = (
@@ -183,7 +302,11 @@
 		238EDC5518EA94D000F054A6 /* taxi */ = {
 			isa = PBXGroup;
 			children = (
+				233A914F18EBDF15003F371B /* Library */,
+				233A914218EBD94F003F371B /* Utils */,
 				238EDCB018EAB4B400F054A6 /* GoogleMap */,
+				233A912418EBA024003F371B /* 0.註冊及登入流程 */,
+				233A913718EBBF2B003F371B /* 1.地圖首頁 */,
 				238EDC5E18EA94D000F054A6 /* AppDelegate.h */,
 				238EDC5F18EA94D000F054A6 /* AppDelegate.m */,
 				238EDC6118EA94D000F054A6 /* Main.storyboard */,
@@ -198,6 +321,7 @@
 		238EDC5618EA94D000F054A6 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				233A913F18EBD710003F371B /* image */,
 				238EDC5718EA94D000F054A6 /* taxi-Info.plist */,
 				238EDC5818EA94D000F054A6 /* InfoPlist.strings */,
 				238EDC5B18EA94D000F054A6 /* main.m */,
@@ -313,6 +437,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				238EDC6818EA94D000F054A6 /* Images.xcassets in Resources */,
+				233A914118EBD80D003F371B /* Logo@2x.png in Resources */,
+				233A913E18EBD70E003F371B /* Logo.png in Resources */,
 				238EDC5A18EA94D000F054A6 /* InfoPlist.strings in Resources */,
 				238EDC6318EA94D000F054A6 /* Main.storyboard in Resources */,
 				238EDC8C18EAB3D700F054A6 /* GoogleMaps.bundle in Resources */,
@@ -368,9 +494,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				233A912E18EBA0F5003F371B /* AyiSignUpViewController.m in Sources */,
 				238EDC6618EA94D000F054A6 /* ViewController.m in Sources */,
+				233A913218EBA12E003F371B /* SetProfileViewController.m in Sources */,
+				233A915618EBDF1E003F371B /* UIImage+ResizeAdditions.m in Sources */,
+				233A914E18EBD9A2003F371B /* Utils.m in Sources */,
 				238EDC6018EA94D000F054A6 /* AppDelegate.m in Sources */,
+				233A914B18EBD9A2003F371B /* CMCache.m in Sources */,
+				233A913A18EBBF41003F371B /* GoogleMapViewController.m in Sources */,
+				233A912818EBA09B003F371B /* AyiLoginViewController.m in Sources */,
+				233A915518EBDF1E003F371B /* UIImage+AlphaAdditions.m in Sources */,
 				238EDC5C18EA94D000F054A6 /* main.m in Sources */,
+				233A914C18EBD9A2003F371B /* CMConstants.m in Sources */,
+				233A913518EBA1C8003F371B /* ConnectCreditCardViewController.m in Sources */,
+				233A914D18EBD9A2003F371B /* CMUtility.m in Sources */,
+				233A912B18EBA0CA003F371B /* AyiWellcomeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
