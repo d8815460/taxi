@@ -87,7 +87,7 @@ static AppDelegate *sharedDelegate;
     }else{
         self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
         UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
-        UINavigationController *mapView = (UINavigationController *)[mainStoryboard instantiateViewControllerWithIdentifier:@"googlemap"];
+        UINavigationController *mapView = (UINavigationController *)[mainStoryboard instantiateViewControllerWithIdentifier:@"mapNavigation"];
         self.window.rootViewController = mapView;
         [self.window makeKeyAndVisible];
     }
@@ -304,7 +304,7 @@ static AppDelegate *sharedDelegate;
 #pragma mark - 轉場至Google Map
 - (void)presentGoogleMapController {
     UIStoryboard *storybord = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-    UINavigationController *googleMap = (UINavigationController *)[storybord instantiateViewControllerWithIdentifier:@"googlemap"];
+    UINavigationController *googleMap = (UINavigationController *)[storybord instantiateViewControllerWithIdentifier:@"mapNavigation"];
     self.window.rootViewController = googleMap;
     [self.window makeKeyAndVisible];
 }

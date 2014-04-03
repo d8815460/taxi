@@ -8,6 +8,7 @@
 
 #import "CMUtility.h"
 #import "UIImage+ResizeAdditions.h"
+#import "SetProfileViewController.h"
 
 @implementation CMUtility
 
@@ -27,19 +28,20 @@
     NSURL *profilePictureCacheURL = [cachesDirectoryURL URLByAppendingPathComponent:@"FacebookProfilePicture.jpg"];
     
     //如果檔案照片一致就不需要再重新上傳。
-    //    if ([[NSFileManager defaultManager] fileExistsAtPath:[profilePictureCacheURL path]]) {
-    //        // We have a cached Facebook profile picture
-    //
-    //        NSData *oldProfilePictureData = [NSData dataWithContentsOfFile:[profilePictureCacheURL path]];
-    //
-    //        if ([oldProfilePictureData isEqualToData:newProfilePictureData]) {
-    //            NSLog(@"緩存的個人檔案照片與資料庫上一致，系統將不會更新照片檔案。");
-    //            return;
-    //        }
-    //    }
+    if ([[NSFileManager defaultManager] fileExistsAtPath:[profilePictureCacheURL path]]) {
+    // We have a cached Facebook profile picture
+        NSData *oldProfilePictureData = [NSData dataWithContentsOfFile:[profilePictureCacheURL path]];
+        if ([oldProfilePictureData isEqualToData:newProfilePictureData]) {
+            NSLog(@"緩存的個人檔案照片與資料庫上一致，系統將不會更新照片檔案。");
+            return;
+        }
+    }
     
     BOOL cachedToDisk = [[NSFileManager defaultManager] createFileAtPath:[profilePictureCacheURL path] contents:newProfilePictureData attributes:nil];
     NSLog(@"磁碟高速緩存個人檔案照片: %d", cachedToDisk);
+    UIStoryboard *mainStoryboard = [UIStoryboard storyboardWithName:@"Main" bundle: nil];
+    SetProfileViewController *setProfile = (SetProfileViewController *)[mainStoryboard instantiateViewControllerWithIdentifier:@"setProfile"];
+    [setProfile viewDidAppear:YES];
     
     UIImage *image = [UIImage imageWithData:newProfilePictureData];
     UIImage *mediumImage = [image thumbnailImage:280 transparentBorder:0 cornerRadius:140 interpolationQuality:kCGInterpolationHigh];
@@ -47,7 +49,6 @@
     
     NSData *mediumImageData = UIImagePNGRepresentation(mediumImage); // using JPEG for larger pictures
     NSData *smallRoundedImageData = UIImagePNGRepresentation(smallRoundedImage);
-    
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults setObject:UIImagePNGRepresentation(mediumImage) forKey:@"mediumImage"];

@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SetProfileViewController : UIViewController
+@interface SetProfileViewController : UIViewController <UITextFieldDelegate>
+
+@property (strong, nonatomic) IBOutlet UIImageView *userPhotoImageView;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *nextBtn;
+@property (strong, nonatomic) IBOutlet UITextField *firstNameTextField;
+@property (strong, nonatomic) IBOutlet UITextField *lastNameTextField;
+
+
+
+- (IBAction)nextBtnPressed:(id)sender;
 
 @end

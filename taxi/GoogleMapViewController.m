@@ -82,14 +82,28 @@
                       ofObject:(id)object
                         change:(NSDictionary *)change
                        context:(void *)context {
-    if (!firstLocationUpdate_) {
-        // If the first location update has not yet been recieved, then jump to that
-        // location.
-        firstLocationUpdate_ = YES;
-        CLLocation *location = [change objectForKey:NSKeyValueChangeNewKey];
-        mapView_.camera = [GMSCameraPosition cameraWithTarget:location.coordinate
-                                                         zoom:14];
-    }
+    
+    CLLocation *location = [change objectForKey:NSKeyValueChangeNewKey];
+//    NSLog(@"keyPath = %@, Object = %@, context = %@", keyPath, object, context);
+    
+    mapView_.camera = [GMSCameraPosition cameraWithTarget:location.coordinate
+                                                     zoom:14];
+    
+    PFGeoPoint *currentPoint = [PFGeoPoint geoPointWithLocation:location];
+    PFObject *currentLocation = [PFObject objectWithClassName:kPAPUserLocationClassKey];
+    [currentLocation setObject:[PFUser currentUser] forKey:kPAPUserLocationUserKey];
+    [currentLocation setObject:currentPoint forKey:kPAPUserLocationLocationKey];
+    
+    PFACL *joinACL = [PFACL ACL];
+    [joinACL setPublicReadAccess:YES];
+    [joinACL setPublicWriteAccess:YES];
+    currentLocation.ACL = joinACL;
+    
+    [currentLocation saveEventually:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            NSLog(@"儲存經緯度");
+        }
+    }];
 }
 
 @end

@@ -52,6 +52,16 @@ extern NSString *const kPAPUserFacebookLocation;
 extern NSString *const kPAPUserMaxQuotaKey;
 extern NSString *const kPAPUserFrequencyKey;
 
+
+#pragma mark - PFObject User Location Class
+// Class key
+extern NSString *const kPAPUserLocationClassKey;
+// Field keys
+extern NSString *const kPAPUserLocationUserKey;
+extern NSString *const kPAPUserLocationLocationKey;
+
+
+
 // 個人檔案照片儲存位置
 extern NSString * const MediumImagefilePath;
 extern NSString * const SmallRoundedImagefilePath;

@@ -50,7 +50,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
-        <!--Ayi Sign Up View Controller-->
+        <!--Ayi Sign Up View Controller - 建立帳戶-->
         <scene sceneID="9kw-jN-Quw">
             <objects>
                 <viewController storyboardIdentifier="signup" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0kK-tG-rXf" customClass="AyiSignUpViewController" sceneMemberID="viewController">
@@ -63,7 +63,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="QEc-Eb-jY7">
+                    <navigationItem key="navigationItem" title="建立帳戶" id="QEc-Eb-jY7">
                         <barButtonItem key="leftBarButtonItem" title="取消" id="dNF-zX-Vsn">
                             <connections>
                                 <action selector="cancelButtonPressed:" destination="0kK-tG-rXf" id="JBn-ej-bty"/>
@@ -78,7 +78,7 @@
             </objects>
             <point key="canvasLocation" x="1262" y="-232"/>
         </scene>
-        <!--Set Profile View Controller-->
+        <!--Set Profile View Controller - 建立基本資料-->
         <scene sceneID="x8l-xR-nyb">
             <objects>
                 <viewController storyboardIdentifier="setProfile" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KFl-Id-B5d" customClass="SetProfileViewController" sceneMemberID="viewController">
@@ -109,17 +109,35 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ddn-u4-XHR">
                                 <rect key="frame" x="20" y="85" width="80" height="80"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="編輯">
+                                <state key="normal">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="編輯" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3iT-Ew-JEc">
+                                <rect key="frame" x="52" y="144" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="shadowOffset" width="-1" height="-1"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="KhQ-QA-4fM">
+                    <navigationItem key="navigationItem" title="建立基本資料" id="KhQ-QA-4fM">
                         <barButtonItem key="leftBarButtonItem" title="取消" id="lMT-gR-Bby"/>
+                        <barButtonItem key="rightBarButtonItem" title="下一步" id="gQ1-0U-ejL">
+                            <connections>
+                                <action selector="nextBtnPressed:" destination="KFl-Id-B5d" id="kq0-gX-bFf"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="firstNameTextField" destination="q5f-QL-YrT" id="1Nv-pQ-IBV"/>
+                        <outlet property="lastNameTextField" destination="zUO-5e-lMh" id="05S-6k-i5z"/>
+                        <outlet property="nextBtn" destination="gQ1-0U-ejL" id="V0p-q8-hnM"/>
+                        <outlet property="userPhotoImageView" destination="n1G-IU-aQE" id="XXF-54-dw4"/>
                         <segue destination="2gx-F3-dWG" kind="push" identifier="connectCreditCard" id="pKX-G2-tly"/>
                         <segue destination="fEG-UE-bPx" kind="modal" identifier="setToMap" modalTransitionStyle="crossDissolve" id="ose-ng-mQR"/>
                     </connections>
@@ -128,7 +146,7 @@
             </objects>
             <point key="canvasLocation" x="1807" y="-232"/>
         </scene>
-        <!--Connect Credit Card View Controller-->
+        <!--Connect Credit Card View Controller - 連結付款-->
         <scene sceneID="YJb-3d-s3A">
             <objects>
                 <viewController id="2gx-F3-dWG" customClass="ConnectCreditCardViewController" sceneMemberID="viewController">
@@ -139,10 +157,26 @@
                     <view key="view" contentMode="scaleToFill" id="tLx-7t-TgY">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EL5-qo-LIJ">
+                                <rect key="frame" x="20" y="100" width="280" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="bVw-da-bZL"/>
+                    <navigationItem key="navigationItem" title="連結付款" id="bVw-da-bZL">
+                        <barButtonItem key="leftBarButtonItem" title="取消" id="rGZ-WZ-rfL"/>
+                        <barButtonItem key="rightBarButtonItem" title="完成" id="xty-hj-4Oe">
+                            <connections>
+                                <action selector="finishBtnPressed:" destination="2gx-F3-dWG" id="cTM-g5-vA4"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="finishBtn" destination="xty-hj-4Oe" id="Yv8-9O-OPI"/>
                         <segue destination="fEG-UE-bPx" kind="modal" identifier="connectToMap" modalTransitionStyle="crossDissolve" id="ghv-Lr-rwU"/>
                     </connections>
                 </viewController>
@@ -237,7 +271,7 @@
         <!--Navigation Controller-->
         <scene sceneID="L3K-lr-FUx">
             <objects>
-                <navigationController storyboardIdentifier="googlemap" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fEG-UE-bPx" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="mapNavigation" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fEG-UE-bPx" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="xwP-Pa-K8x">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

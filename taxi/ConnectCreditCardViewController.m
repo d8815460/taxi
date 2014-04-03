@@ -46,4 +46,13 @@
 }
 */
 
+- (IBAction)finishBtnPressed:(id)sender {
+    [self performSegueWithIdentifier:@"connectToMap" sender:sender];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"connectToMap"]) {
+        
+    }
+}
 @end

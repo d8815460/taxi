@@ -23,6 +23,8 @@
 		233A915618EBDF1E003F371B /* UIImage+ResizeAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 233A915318EBDF1E003F371B /* UIImage+ResizeAdditions.m */; };
 		233A915918EBE8D4003F371B /* SignUpFieldBG@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 233A915718EBE8D4003F371B /* SignUpFieldBG@2x.png */; };
 		233A915A18EBE8D4003F371B /* SignUpFieldBG.png in Resources */ = {isa = PBXBuildFile; fileRef = 233A915818EBE8D4003F371B /* SignUpFieldBG.png */; };
+		237EBAB518ECF93E00C97F61 /* profilePhoto@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 237EBAB318ECF93E00C97F61 /* profilePhoto@2x.png */; };
+		237EBAB618ECF93E00C97F61 /* profilePhoto.png in Resources */ = {isa = PBXBuildFile; fileRef = 237EBAB418ECF93E00C97F61 /* profilePhoto.png */; };
 		238EDC5018EA94D000F054A6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 238EDC4F18EA94D000F054A6 /* Foundation.framework */; };
 		238EDC5218EA94D000F054A6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 238EDC5118EA94D000F054A6 /* CoreGraphics.framework */; };
 		238EDC5418EA94D000F054A6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 238EDC5318EA94D000F054A6 /* UIKit.framework */; };
@@ -99,6 +101,8 @@
 		233A915418EBDF1E003F371B /* UIImage+RoundedCornerAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+RoundedCornerAdditions.h"; sourceTree = "<group>"; };
 		233A915718EBE8D4003F371B /* SignUpFieldBG@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SignUpFieldBG@2x.png"; sourceTree = "<group>"; };
 		233A915818EBE8D4003F371B /* SignUpFieldBG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SignUpFieldBG.png; sourceTree = "<group>"; };
+		237EBAB318ECF93E00C97F61 /* profilePhoto@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profilePhoto@2x.png"; sourceTree = "<group>"; };
+		237EBAB418ECF93E00C97F61 /* profilePhoto.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profilePhoto.png; sourceTree = "<group>"; };
 		238EDC4C18EA94D000F054A6 /* taxi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = taxi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		238EDC4F18EA94D000F054A6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		238EDC5118EA94D000F054A6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -225,6 +229,8 @@
 		233A913F18EBD710003F371B /* image */ = {
 			isa = PBXGroup;
 			children = (
+				237EBAB318ECF93E00C97F61 /* profilePhoto@2x.png */,
+				237EBAB418ECF93E00C97F61 /* profilePhoto.png */,
 				233A915718EBE8D4003F371B /* SignUpFieldBG@2x.png */,
 				233A915818EBE8D4003F371B /* SignUpFieldBG.png */,
 				233A914018EBD80D003F371B /* Logo@2x.png */,
@@ -321,7 +327,7 @@
 			children = (
 				233A914F18EBDF15003F371B /* Library */,
 				233A914218EBD94F003F371B /* Utils */,
-				238EDCB018EAB4B400F054A6 /* GoogleMap */,
+				238EDCB018EAB4B400F054A6 /* GoogleMap SDK */,
 				233A912418EBA024003F371B /* 0.註冊及登入流程 */,
 				233A913718EBBF2B003F371B /* 1.地圖首頁 */,
 				238EDC5E18EA94D000F054A6 /* AppDelegate.h */,
@@ -365,14 +371,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		238EDCB018EAB4B400F054A6 /* GoogleMap */ = {
+		238EDCB018EAB4B400F054A6 /* GoogleMap SDK */ = {
 			isa = PBXGroup;
 			children = (
 				238EDCB118EAB68400F054A6 /* GoogleMaps.framework */,
 				238EDC8B18EAB3D700F054A6 /* GoogleMaps.bundle */,
 				238EDC8718EAB19900F054A6 /* SDKDemoAPIKey.h */,
 			);
-			name = GoogleMap;
+			name = "GoogleMap SDK";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -453,6 +459,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				237EBAB618ECF93E00C97F61 /* profilePhoto.png in Resources */,
 				238EDC6818EA94D000F054A6 /* Images.xcassets in Resources */,
 				233A914118EBD80D003F371B /* Logo@2x.png in Resources */,
 				233A913E18EBD70E003F371B /* Logo.png in Resources */,
@@ -461,6 +468,7 @@
 				233A915918EBE8D4003F371B /* SignUpFieldBG@2x.png in Resources */,
 				238EDC8C18EAB3D700F054A6 /* GoogleMaps.bundle in Resources */,
 				233A915A18EBE8D4003F371B /* SignUpFieldBG.png in Resources */,
+				237EBAB518ECF93E00C97F61 /* profilePhoto@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

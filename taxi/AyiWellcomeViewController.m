@@ -169,6 +169,9 @@
             [FBRequestConnection startForMeWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
                 if (!error) {
                     [self facebookRequestDidLoad:result];
+                    //轉場到 註冊2 的畫面
+                    NSLog(@"loginToSet");
+                    [logInController performSegueWithIdentifier:@"loginToSet" sender:nil];
                 } else {
                     [self facebookRequestDidFailWithError:error];
                 }
@@ -185,14 +188,11 @@
             [[PFUser currentUser] setObject:user.username forKey:kPAPUserDisplayNameKey];
             [[PFUser currentUser] setObject:privateChannelName forKey:kPAPUserPrivateChannelKey];
             [[PFUser currentUser] saveEventually];
+            
+            //轉場到 註冊2 的畫面
+            NSLog(@"loginToSet");
+            [logInController performSegueWithIdentifier:@"loginToSet" sender:nil];
         }
-        
-        //轉場到 註冊2 的畫面
-        NSLog(@"loginToSet");
-        logInController.navigationItem.leftBarButtonItem = nil;
-        [logInController performSegueWithIdentifier:@"loginToSet" sender:nil];
-        
-//        [(AppDelegate*)[[UIApplication sharedApplication] delegate] presentFirstSignInViewController];
     }else{
         //轉場至 google Map 畫面
         [(AppDelegate*)[[UIApplication sharedApplication] delegate] presentGoogleMapController];

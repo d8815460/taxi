@@ -54,6 +54,15 @@ NSString *const kPAPUserMaxQuotaKey                             = @"userMaxQuota
 NSString *const kPAPUserFrequencyKey                            = @"frequency";
 
 
+#pragma mark - PFObject User Location Class
+// Class key
+NSString *const kPAPUserLocationClassKey        = @"UserLocation";
+// Field keys
+NSString *const kPAPUserLocationUserKey         = @"user";
+NSString *const kPAPUserLocationLocationKey     = @"location";
+
+
+
 
 //個人檔案照片儲存位置
 NSString * const MediumImagefilePath = @"Documents/medium.png";

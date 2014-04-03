@@ -10,4 +10,9 @@
 
 @interface ConnectCreditCardViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *finishBtn;
+
+
+- (IBAction)finishBtnPressed:(id)sender;
+
 @end
