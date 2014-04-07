@@ -152,6 +152,11 @@
             
             [[PFUser currentUser] setObject:privateChannelName forKey:kPAPUserPrivateChannelKey];
             [[PFUser currentUser] setObject:[PFTwitterUtils twitter].screenName forKey:kPAPUserDisplayNameKey];
+            
+            PFACL *ACL = [PFACL ACL];
+            [ACL setPublicReadAccess:YES];
+            [PFUser currentUser].ACL = ACL;
+            
             [[PFUser currentUser] saveEventually];
             
         } else if ([PFFacebookUtils isLinkedWithUser:user]) {
@@ -164,6 +169,11 @@
             [userDefaults synchronize];
             //            [[PFUser currentUser] setObject:[user objectForKey:kPAPUserDisplayNameKey] forKey:kPAPUserDisplayNameKey];
             [[PFUser currentUser] setObject:privateChannelName forKey:kPAPUserPrivateChannelKey];
+            
+            PFACL *ACL = [PFACL ACL];
+            [ACL setPublicReadAccess:YES];
+            [PFUser currentUser].ACL = ACL;
+            
             [[PFUser currentUser] saveEventually];
             
             [FBRequestConnection startForMeWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
@@ -187,6 +197,11 @@
             [userDefaults synchronize];
             [[PFUser currentUser] setObject:user.username forKey:kPAPUserDisplayNameKey];
             [[PFUser currentUser] setObject:privateChannelName forKey:kPAPUserPrivateChannelKey];
+            
+            PFACL *ACL = [PFACL ACL];
+            [ACL setPublicReadAccess:YES];
+            [PFUser currentUser].ACL = ACL;
+            
             [[PFUser currentUser] saveEventually];
             
             //轉場到 註冊2 的畫面
@@ -292,6 +307,9 @@
                     }
                 }];
             }
+            PFACL *ACL = [PFACL ACL];
+            [ACL setPublicReadAccess:YES];
+            user.ACL = ACL;
             
             [user saveEventually];
         } else {
@@ -343,8 +361,8 @@
             if (facebookLocation && facebookLocation != 0) {
                 [[PFUser currentUser] setObject:facebookLocation forKey:kPAPUserFacebookLocalsKey];
             }
-            //設定新用戶發問問題數上限
-            //            [[PFUser currentUser] setObject:[NSNumber numberWithInt:5] forKey:kPAPUserMaxQuotaKey];
+            //設定新用戶預設為乘車客人
+            [[PFUser currentUser] setObject:kPAPUserTypePassengerKey forKey:kPAPUserTypeKey];
             
             //設定新用戶接收頻率為10, 等級為1~10
             //            [[PFUser currentUser] setObject:[NSNumber numberWithInt:10] forKey:kPAPUserFrequencyKey];
@@ -356,17 +374,11 @@
             NSURLRequest *profilePictureURLRequest = [NSURLRequest requestWithURL:profilePictureURL cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:0.0f];
             [NSURLConnection connectionWithRequest:profilePictureURLRequest delegate:self];
             
+            PFACL *ACL = [PFACL ACL];
+            [ACL setPublicReadAccess:YES];
+            [PFUser currentUser].ACL = ACL;
             
-            //            PFQuery *userQuery = [PFUser query];
-            //            [userQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-            //                if (objects.count < 2000) {
-            //                    [[PFUser currentUser] setObject:@YES forKey:@"EarlyBird"];
-            //                    [user saveEventually];
-            //                }else{
-            //                    [[PFUser currentUser] setObject:@NO forKey:@"EarlyBird"];
-            //                    [user saveEventually];
-            //                }
-            //            }];
+            [[PFUser currentUser] saveEventually];
         }
         
         [FBRequestConnection startForMyFriendsWithCompletionHandler:^(FBRequestConnection *connection, id result, NSError *error) {

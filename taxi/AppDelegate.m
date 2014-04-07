@@ -189,6 +189,18 @@ static AppDelegate *sharedDelegate;
     //使用這個方法來釋放共享資源，保存用戶數據，無效計時器，並儲存足夠的應用程序狀態信息到應用程序恢復的情況下其目前的狀態是後終止。
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     //如果你的應用程序支持後台運行，這種方法被稱為代替applicationWillTerminate：當用戶退出。
+    PFUser *currentUser = [PFUser currentUser];
+    if (currentUser) {
+        [currentUser setObject:@NO forKey:kPAPUserIsReadLocationKey];
+        
+        PFACL *ACL = [PFACL ACLWithUser:[PFUser currentUser]];
+        [ACL setPublicReadAccess:YES];
+        currentUser.ACL = ACL;
+        
+        [currentUser saveEventually:^(BOOL succeeded, NSError *error) {
+            
+        }];
+    }
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application

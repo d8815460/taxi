@@ -8,16 +8,21 @@
 
 #import "CMConstants.h"
 
-//natalielin1985
+
 #pragma mark - 個人資訊的key
 NSString *const kCMUserNameString           = @"username";
 NSString *const defaultsFilterDistanceKey   = @"filterDistance";
 NSString *const defaultsLocationKey         = @"currentLocation";
-NSString *const kPAWParseLocationKey        = @"location";
+NSString *const kPAPParseLocationKey        = @"location";
+NSString *const kPAPUserTypeKey             = @"type";
+NSString *const kPAPUserIsReadLocationKey   = @"isReadLocation";
+//Type
+NSString *const kPAPUserTypeDriverKey       = @"driver";
+NSString *const kPAPUserTypePassengerKey    = @"passenger";
 
 #pragma mark - NSNotification userInfo keys:
-NSString * const kPAWFilterDistanceKey = @"filterDistance";
-NSString * const kPAWLocationKey = @"location";
+NSString * const kPAWFilterDistanceKey      = @"filterDistance";
+NSString * const kPAWLocationKey            = @"location";
 
 
 #pragma mark - Notification names:

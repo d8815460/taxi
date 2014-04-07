@@ -10,4 +10,12 @@
 
 @interface GoogleMapViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIButton *uploadOrStopLocation;
+@property (weak, nonatomic) IBOutlet UIButton *passengersBtn;
+@property (weak, nonatomic) IBOutlet UIButton *driverBtn;
+
+
+- (IBAction)driverBtnPressed:(id)sender;
+- (IBAction)passengersBtn:(id)sender;
+- (IBAction)uploadOrStopLocationBtnPressed:(id)sender;
 @end

@@ -10,7 +10,13 @@
 extern NSString *const kCMUserNameString;
 extern NSString *const defaultsFilterDistanceKey;
 extern NSString *const defaultsLocationKey;
-extern NSString *const kPAWParseLocationKey;
+extern NSString *const kPAPParseLocationKey;
+extern NSString *const kPAPUserTypeKey;
+extern NSString *const kPAPUserIsReadLocationKey;
+
+// Type values
+extern NSString *const kPAPUserTypeDriverKey;
+extern NSString *const kPAPUserTypePassengerKey;
 
 // NSNotification userInfo keys:
 extern NSString * const kPAWFilterDistanceKey;
