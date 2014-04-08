@@ -140,6 +140,12 @@
 // Sent to the delegate when a PFUser is logged in.
 - (void)logInViewController:(PFLogInViewController *)logInController didLogInUser:(PFUser *)user {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    
+    NSString *privateChannelName = [NSString stringWithFormat:@"user_%@", [user objectId]];
+    [[PFInstallation currentInstallation] setObject:[PFUser currentUser] forKey:kPAPInstallationUserKey];
+    [[PFInstallation currentInstallation] addUniqueObject:privateChannelName forKey:kPAPInstallationChannelsKey];
+    [[PFInstallation currentInstallation] saveEventually];
+    
     if ([user isNew]) {
         //先判斷是不是facebook 登入，如果是，就要記錄用戶資料
         if ([PFTwitterUtils isLinkedWithUser:[PFUser currentUser]]) {

@@ -25,6 +25,37 @@ static AppDelegate *sharedDelegate;
 @synthesize internetReach   = _internetReach;               //判斷網路是否可用
 @synthesize wifiReach       = _wifiReach;                   //判斷wifi網路是否可用
 @synthesize networkStatus;
+@synthesize filterDistance  = _filterDistance;
+@synthesize currentLocation = _currentLocation;
+
+
+#pragma mark - 接收用戶設定的搜尋半徑。
+- (void)setFilterDistance:(CLLocationAccuracy)aFilterDistance
+{
+	_filterDistance = aFilterDistance;
+	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+	[userDefaults setDouble:_filterDistance forKey:defaultsFilterDistanceKey];
+	[userDefaults synchronize];
+	// Notify the app of the filterDistance change:
+	NSDictionary *userLocationInfo = [NSDictionary dictionaryWithObject:[NSNumber numberWithDouble:_filterDistance] forKey:kPAWFilterDistanceKey];
+	dispatch_async(dispatch_get_main_queue(), ^{
+		[[NSNotificationCenter defaultCenter] postNotificationName:kPAWFilterDistanceChangeNotification object:nil userInfo:userLocationInfo];
+	});
+}
+
+#pragma mark - 接收用戶當前經緯度資訊。
+- (void)setCurrentLocation:(CLLocation *)aCurrentLocation
+{
+	_currentLocation = aCurrentLocation;
+	// Notify the app of the location change:
+	NSDictionary *userLocationInfo = [NSDictionary dictionaryWithObject:_currentLocation forKey:kPAWLocationKey];
+	dispatch_async(dispatch_get_main_queue(), ^{
+		[[NSNotificationCenter defaultCenter] postNotificationName:kPAWLocationChangeNotification object:nil userInfo:userLocationInfo];
+	});
+}
+
+
+
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -62,6 +93,26 @@ static AppDelegate *sharedDelegate;
     // enough but is good for a demo.
     NSLog(@"Open source licenses:\n%@", [GMSServices openSourceLicenseInfo]);
     
+    
+    
+    //推播機制之代碼。 自定義應用程序啟動後覆蓋點。
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge|
+     UIRemoteNotificationTypeAlert|
+     UIRemoteNotificationTypeSound];
+    
+    // Grab values from NSUserDefaults:  for Map 從NSUserDefaults中提取值：地圖
+	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    
+    // Desired search radius: 期望中的搜索半徑：
+	if ([userDefaults doubleForKey:defaultsFilterDistanceKey]) {
+		// use the ivar instead of self.accuracy to avoid an unnecessary write to NAND on launch.
+        // 使用伊娃，而不是self.accuracy，以避免不必要的寫入NAND推出。
+		_filterDistance = [userDefaults doubleForKey:defaultsFilterDistanceKey];
+	} else {
+		// if we have no accuracy in defaults, set it to 10000 feet.
+        // 一開始沒有Accuracy就預設20000英尺。
+		_filterDistance = 10000 * kPAWFeetToMeters;
+	}
     
     if (application.applicationIconBadgeNumber != 0) {
         NSLog(@"install 1");
@@ -332,6 +383,7 @@ static AppDelegate *sharedDelegate;
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     NSLog(@"install 4");
+    [[PFInstallation currentInstallation] setObject:@[@""] forKey:kPAPInstallationChannelsKey];
     [[PFInstallation currentInstallation] removeObjectForKey:kPAPInstallationUserKey];
     [[PFInstallation currentInstallation] removeObjectForKey:@"channels"];
     [[PFInstallation currentInstallation] removeObjectForKey:@"deviceToken"];

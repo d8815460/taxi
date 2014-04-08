@@ -19,6 +19,9 @@
 @property (nonatomic, strong) Reachability *wifiReach;                                  //判斷wifi網路是否可用
 @property (nonatomic, readonly) int networkStatus;
 
+@property (nonatomic, assign) CLLocationAccuracy filterDistance;
+@property (nonatomic, strong) CLLocation *currentLocation;
+
 + (NSInteger)OSVersion;
 + (AppDelegate *)sharedDelegate;
 

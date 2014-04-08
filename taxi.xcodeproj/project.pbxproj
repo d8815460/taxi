@@ -58,6 +58,7 @@
 		238EDCB218EAB68400F054A6 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 238EDCB118EAB68400F054A6 /* GoogleMaps.framework */; };
 		238EDCB318EAB68400F054A6 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 238EDCB118EAB68400F054A6 /* GoogleMaps.framework */; };
 		BF3F8D0A74D54B1C8E63D9F1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CD04588AB7DF4A0B8E070142 /* libPods.a */; };
+		FAA0606E18F27DB300AEEB24 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA0606D18F27DB300AEEB24 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		FAF15E8718EC3E3200302259 /* UIImage+RoundedCornerAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF15E8618EC3E3200302259 /* UIImage+RoundedCornerAdditions.m */; };
 /* End PBXBuildFile section */
 
@@ -141,6 +142,8 @@
 		238EDCB118EAB68400F054A6 /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GoogleMaps.framework; sourceTree = "<group>"; };
 		BB01B447D69F4701BD60ADF6 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		CD04588AB7DF4A0B8E070142 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAA0606C18F27DB300AEEB24 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		FAA0606D18F27DB300AEEB24 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
 		FAF15E8618EC3E3200302259 /* UIImage+RoundedCornerAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RoundedCornerAdditions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -257,6 +260,7 @@
 		233A914F18EBDF15003F371B /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				FAA0606B18F27DA900AEEB24 /* JSONKit */,
 				233A915018EBDF1E003F371B /* UIImage+AlphaAdditions.h */,
 				233A915118EBDF1E003F371B /* UIImage+AlphaAdditions.m */,
 				233A915218EBDF1E003F371B /* UIImage+ResizeAdditions.h */,
@@ -381,6 +385,15 @@
 			name = "GoogleMap SDK";
 			sourceTree = "<group>";
 		};
+		FAA0606B18F27DA900AEEB24 /* JSONKit */ = {
+			isa = PBXGroup;
+			children = (
+				FAA0606C18F27DB300AEEB24 /* JSONKit.h */,
+				FAA0606D18F27DB300AEEB24 /* JSONKit.m */,
+			);
+			name = JSONKit;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -430,6 +443,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = Miiitech;
 				TargetAttributes = {
+					238EDC4B18EA94D000F054A6 = {
+						DevelopmentTeam = 8LJ7V3WEL3;
+					};
 					238EDC6C18EA94D000F054A6 = {
 						TestTargetID = 238EDC4B18EA94D000F054A6;
 					};
@@ -525,6 +541,7 @@
 				233A912E18EBA0F5003F371B /* AyiSignUpViewController.m in Sources */,
 				238EDC6618EA94D000F054A6 /* ViewController.m in Sources */,
 				233A913218EBA12E003F371B /* SetProfileViewController.m in Sources */,
+				FAA0606E18F27DB300AEEB24 /* JSONKit.m in Sources */,
 				233A915618EBDF1E003F371B /* UIImage+ResizeAdditions.m in Sources */,
 				233A914E18EBD9A2003F371B /* Utils.m in Sources */,
 				238EDC6018EA94D000F054A6 /* AppDelegate.m in Sources */,
@@ -620,6 +637,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "938F3D00-D708-43D0-B71E-C51DDA265B57";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -651,6 +669,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				PROVISIONING_PROFILE = "938F3D00-D708-43D0-B71E-C51DDA265B57";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -662,6 +681,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -672,6 +694,7 @@
 				INFOPLIST_FILE = "taxi/taxi-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "938F3D00-D708-43D0-B71E-C51DDA265B57";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -682,6 +705,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -692,6 +718,7 @@
 				INFOPLIST_FILE = "taxi/taxi-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "938F3D00-D708-43D0-B71E-C51DDA265B57";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
