@@ -32,6 +32,8 @@ extern double const kPAWFeetToMiles;                                // this is a
 extern double const kPAWWallPostMaximumSearchDistance;
 extern double const kPAWMetersInAKilometer;                         // this is an exact value.
 
+extern NSUInteger const kPAWMapCarsSearch;
+
 #define PAWLocationAccuracy double
 
 #pragma mark - Launch URLs

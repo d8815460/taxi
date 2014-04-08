@@ -35,6 +35,8 @@ double const kPAWFeetToMiles = 5280.0;;                                 // this 
 double const kPAWWallPostMaximumSearchDistance = 3.0;
 double const kPAWMetersInAKilometer = 1000.0;                           // this is an exact value.
 
+NSUInteger const kPAWMapCarsSearch = 5;                              // query limit for cars on Map
+
 #pragma mark - Launch URLs
 NSString *const kPAPLaunchURLHostTakePicture = @"camera";
 

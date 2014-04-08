@@ -59,6 +59,7 @@
 		238EDCB318EAB68400F054A6 /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 238EDCB118EAB68400F054A6 /* GoogleMaps.framework */; };
 		BF3F8D0A74D54B1C8E63D9F1 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CD04588AB7DF4A0B8E070142 /* libPods.a */; };
 		FAA0606E18F27DB300AEEB24 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA0606D18F27DB300AEEB24 /* JSONKit.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		FAA0607318F3FFDF00AEEB24 /* PAWSearchRadius.m in Sources */ = {isa = PBXBuildFile; fileRef = FAA0607218F3FFDF00AEEB24 /* PAWSearchRadius.m */; };
 		FAF15E8718EC3E3200302259 /* UIImage+RoundedCornerAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = FAF15E8618EC3E3200302259 /* UIImage+RoundedCornerAdditions.m */; };
 /* End PBXBuildFile section */
 
@@ -144,6 +145,8 @@
 		CD04588AB7DF4A0B8E070142 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAA0606C18F27DB300AEEB24 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
 		FAA0606D18F27DB300AEEB24 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		FAA0607118F3FFDF00AEEB24 /* PAWSearchRadius.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PAWSearchRadius.h; sourceTree = "<group>"; };
+		FAA0607218F3FFDF00AEEB24 /* PAWSearchRadius.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PAWSearchRadius.m; sourceTree = "<group>"; };
 		FAF15E8618EC3E3200302259 /* UIImage+RoundedCornerAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+RoundedCornerAdditions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -223,6 +226,8 @@
 		233A913718EBBF2B003F371B /* 1.地圖首頁 */ = {
 			isa = PBXGroup;
 			children = (
+				FAA0607118F3FFDF00AEEB24 /* PAWSearchRadius.h */,
+				FAA0607218F3FFDF00AEEB24 /* PAWSearchRadius.m */,
 				233A913818EBBF41003F371B /* GoogleMapViewController.h */,
 				233A913918EBBF41003F371B /* GoogleMapViewController.m */,
 			);
@@ -547,6 +552,7 @@
 				238EDC6018EA94D000F054A6 /* AppDelegate.m in Sources */,
 				233A914B18EBD9A2003F371B /* CMCache.m in Sources */,
 				233A913A18EBBF41003F371B /* GoogleMapViewController.m in Sources */,
+				FAA0607318F3FFDF00AEEB24 /* PAWSearchRadius.m in Sources */,
 				233A912818EBA09B003F371B /* AyiLoginViewController.m in Sources */,
 				233A915518EBDF1E003F371B /* UIImage+AlphaAdditions.m in Sources */,
 				238EDC5C18EA94D000F054A6 /* main.m in Sources */,
